@@ -1,4 +1,4 @@
-import Profile from '@/components/pages/Profile';
+import Profile from "@/features/auth/pages/Profile";
 
 export default function ProfilePage() {
   return <Profile />;

@@ -7,9 +7,6 @@ declare module 'next-auth' {
       id: string;
       role: UserRole;
       image?: string | null;
-      onboardingCompleted: boolean;
-      blingSyncStatus: BlingSyncStatus;
-      hasBlingIntegration: boolean;
     } & DefaultSession['user'];
     required2FA?: boolean;
   }
@@ -17,10 +14,7 @@ declare module 'next-auth' {
   interface User {
     id: string;
     role: UserRole;
-    onboardingCompleted: boolean;
     required2FA?: boolean;
-    blingSyncStatus: BlingSyncStatus;
-    hasBlingIntegration?: boolean;
   }
 }
 
@@ -28,10 +22,7 @@ declare module 'next-auth/jwt' {
   interface JWT {
     id: string;
     role: UserRole;
-    onboardingCompleted: boolean;
     required2FA?: boolean;
-    blingSyncStatus: BlingSyncStatus;
-    hasBlingIntegration: boolean;
     auditCreated?: boolean;
   }
 }

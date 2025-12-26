@@ -1,5 +1,3 @@
-import { Dashboard } from '@/features/dashboard/pages/Dashboard';
-
 export default async function DashboardPage() {
-  return <Dashboard />;
+  return <div>Welcome to the Dashboard</div>;
 }

@@ -1,6 +1,6 @@
 import { useDebouncedValue } from '@mantine/hooks';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useQueryString } from './useQueryString';
+import { useQueryString } from './use-query-string';
 
 const SEARCH_DEBOUNCE_INTERVAL = 300;
 

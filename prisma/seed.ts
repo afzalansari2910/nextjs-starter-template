@@ -38,7 +38,6 @@ async function main() {
   await safeDelete('accounts', () => prisma.account.deleteMany());
   await safeDelete('verification_tokens', () => prisma.verificationToken.deleteMany());
   await safeDelete('data_registries', () => prisma.dataRegistry.deleteMany());
-  await safeDelete('bling_sync_jobs', () => prisma.blingSyncJob.deleteMany());
 
   // Agora pode excluir os usuários
   await safeDelete('users', () => prisma.user.deleteMany());

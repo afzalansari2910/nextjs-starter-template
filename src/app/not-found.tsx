@@ -1,6 +1,6 @@
 import { getServerSession } from 'next-auth';
-import { AdminLayout } from '@/components/layout/AdminLayout';
-import { PublicLayout } from '@/components/layout/PublicLayout';
+import { AdminLayout } from '@/components/layouts/AdminLayout';
+import { PublicLayout } from '@/components/layouts/PublicLayout';
 import { NotFoundPage } from '@/components/pages/NotFound';
 import { authOptions } from '@/lib/next-auth';
 

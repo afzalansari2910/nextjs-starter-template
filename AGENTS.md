@@ -1,7 +1,7 @@
 # Project Context & Agent Guidelines
 
 ## 1. Purpose
-This document provides the required context, architecture, and execution rules for all agents contributing to the **Nexus OS** codebase.
+This document provides the required context, architecture, and execution rules for all agents contributing to the **Next.JS Template** codebase.
 Agents must follow these guidelines rigorously to ensure consistency, maintainability, and correctness across the project.
 
 Before producing or modifying any code, components, database models, or architecture, agents must always follow the documentation sources and rules listed below.
@@ -24,10 +24,10 @@ These URLs override any outdated assumptions or cached knowledge and must be con
 
 ## 3. Project Overview
 
-**Name:** Nexus OS
-**Version:** 2.0.0
+**Name:** Next.JS Template with TypeScript and Mantine UI
+**Version:** 1.0.0
 **Framework:** Next.js 16+ (App Router, Turbopack)
-**Type:** Full-Stack SaaS Platform with authentication, ERP integrations, background jobs, and dashboards.
+**Type:** Full Stack Web Application Template
 
 ## 4. Tech Stack
 

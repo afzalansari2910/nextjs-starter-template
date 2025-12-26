@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { lazy } from 'react';
 
 const ProfileForm = lazy(() => import('./ProfileForm'));
-const BlingIntegrationForm = lazy(() => import('./BlingIntegrationForm'));
 const SecurityForm = lazy(() => import('./SecurityForm'));
 // const ApiKeysForm = lazy(() => import('./ApiKeysForm'));
 // const PrivacyDataForm = lazy(() => import('./PrivacyDataForm'));
@@ -40,7 +39,6 @@ export default function Profile() {
             </Box>
             <ProfileForm />
             <SecurityForm />
-            <BlingIntegrationForm />
             {/* <ApiKeysForm /> */}
             {/* <PrivacyDataForm /> */}
             {/* <PreferencesForm /> */}

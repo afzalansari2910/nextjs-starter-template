@@ -1,6 +1,6 @@
 {
-  "name": "nexus-os",
-  "version": "2.0.0",
+  "name": "nextjs-template",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "predev": "next typegen",
@@ -90,9 +90,9 @@
       "biome check --write --diagnostic-level=error"
     ]
   },
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.26.0",
   "engines": {
-    "node": ">=22",
+    "node": ">=20",
     "pnpm": ">=10"
   },
   "engineStrict": true,

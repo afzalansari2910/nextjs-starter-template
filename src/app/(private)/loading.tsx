@@ -1,4 +1,4 @@
-import { AdminLayoutSkeleton } from '@/components/layout/AdminLayout';
+import { AdminLayoutSkeleton } from '@/components/layouts/AdminLayout';
 
 export default function Loading() {
   return <AdminLayoutSkeleton />;

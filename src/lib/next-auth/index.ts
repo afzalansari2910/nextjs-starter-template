@@ -1,5 +1,5 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { BlingSyncStatus, UserRole } from '@prisma/client';
+import { UserRole } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import type { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -92,7 +92,6 @@ export const authOptions: AuthOptions = {
               id: user.id,
               role: UserRole.GUEST,
               required2FA: true,
-              blingSyncStatus: user.blingSyncStatus,
               onboardingCompleted: user.onboardingCompleted,
             };
           }
@@ -145,7 +144,6 @@ export const authOptions: AuthOptions = {
           image: user.image,
           onboardingCompleted: user.onboardingCompleted,
           required2FA: false,
-          blingSyncStatus: user.blingSyncStatus,
         };
       },
     }),
@@ -160,7 +158,6 @@ export const authOptions: AuthOptions = {
           image: profile.picture,
           role: UserRole.USER,
           onboardingCompleted: false,
-          blingSyncStatus: BlingSyncStatus.IDLE,
         };
       },
     }),
@@ -233,7 +230,6 @@ export const authOptions: AuthOptions = {
           // Buscar usuário completo (já criado pelo adapter)
           const dbUser = await prisma.user.findUnique({
             where: { email: user.email! },
-            include: { blingIntegration: true },
           });
 
           if (dbUser) {
@@ -241,8 +237,6 @@ export const authOptions: AuthOptions = {
             token.role = dbUser.role;
             token.image = dbUser.image;
             token.onboardingCompleted = dbUser.onboardingCompleted;
-            token.blingSyncStatus = dbUser.blingSyncStatus;
-            token.hasBlingIntegration = !!dbUser.blingIntegration;
 
             // Criar audit log para novo usuário OAuth
             if (!token.auditCreated) {
@@ -269,24 +263,13 @@ export const authOptions: AuthOptions = {
         token.image = user.image;
         token.onboardingCompleted = user.onboardingCompleted;
         token.required2FA = user.required2FA;
-
-        // Fetch additional user data
-        const dbUser = await prisma.user.findUnique({
-          where: { id: user.id },
-          include: { blingIntegration: true },
-        });
-
-        if (dbUser) {
-          token.blingSyncStatus = dbUser.blingSyncStatus;
-          token.hasBlingIntegration = !!dbUser.blingIntegration;
-        }
       }
 
       // Atualizar sessão se necessário
       if (trigger === 'update') {
         const updatedUser = await prisma.user.findUnique({
           where: { id: token.id as string },
-          include: { blingIntegration: true },
+
         });
 
         if (updatedUser) {
@@ -294,8 +277,6 @@ export const authOptions: AuthOptions = {
           token.image = updatedUser.image;
           token.role = updatedUser.role;
           token.onboardingCompleted = updatedUser.onboardingCompleted;
-          token.blingSyncStatus = updatedUser.blingSyncStatus;
-          token.hasBlingIntegration = !!updatedUser.blingIntegration;
         }
       }
 
@@ -311,8 +292,6 @@ export const authOptions: AuthOptions = {
           role: token.role as UserRole,
           image: token.image as string,
           onboardingCompleted: token.onboardingCompleted as boolean,
-          blingSyncStatus: token.blingSyncStatus,
-          hasBlingIntegration: token.hasBlingIntegration,
         };
         session.required2FA = token.required2FA as boolean;
       }

@@ -1,7 +1,7 @@
 'use client';
 import { Button, Center, Stack, Text, Title } from '@mantine/core';
 import Link from 'next/link';
-import { AdminLayout } from '@/components/layout/AdminLayout';
+import { AdminLayout } from '@/components/layouts/AdminLayout';
 
 export default function NotFoundPage() {
   return (
