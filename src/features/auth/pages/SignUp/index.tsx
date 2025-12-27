@@ -127,7 +127,19 @@ export function SignUp() {
 
         <Group justify="space-between" mt="xl">
           <Checkbox
-            label="Aceito os termos e condições"
+            label={
+              <Text>
+                Aceito os termos e concordo com a{' '}
+                <Anchor
+                  component={Link}
+                  href="/politica-de-privacidade"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  política de privacidade
+                </Anchor>
+              </Text>
+            }
             checked={form.values.terms}
             onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
             error={form.errors.terms}
