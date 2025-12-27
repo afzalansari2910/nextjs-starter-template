@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
+import { APP_USER_HOME } from './lib/constants';
 import { AUTH_ROUTES, canAccessRoute, isAuthRoute, isPrivateRoute } from './lib/routes';
 
 const { NEXTAUTH_SECRET, NEXT_ENABLE_HOME_PAGE, NEXT_ENABLE_SIGN_UP_PAGE } = process.env;
@@ -24,7 +25,7 @@ export async function proxy(request: NextRequest) {
     }
 
     if (isAuthRoute(pathname) && !required2FA) {
-      return NextResponse.redirect(new URL('/bling', request.url));
+      return NextResponse.redirect(new URL(APP_USER_HOME, request.url));
     }
 
     if (!canAccessRoute(role, pathname as any)) {

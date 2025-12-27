@@ -20,6 +20,7 @@ import { signIn } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { GoogleButton } from '@/components/commons/GoogleButton';
 import { useQueryString } from '@/hooks';
+import { APP_USER_HOME } from '@/lib/constants';
 import { TwoFactorQRCode } from '../../components/TwoFactorQRCode';
 import { useAuth } from '../../context/AuthContext';
 import { SignInSchema } from '../../services';
@@ -29,7 +30,7 @@ export function SignIn() {
   const { required2FA, status } = useAuth();
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { getQueryParam } = useQueryString();
-  const nextPage = '/bling';
+  const nextPage = APP_USER_HOME;
   const redirect = getQueryParam('redirect') || nextPage;
   const router = useRouter();
 

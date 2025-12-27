@@ -18,6 +18,7 @@ import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { GoogleButton } from '@/components/commons/GoogleButton';
+import { APP_USER_HOME } from '@/lib/constants';
 import { SignUpSchema, useSignUp } from '../../services';
 
 export function SignUp() {
@@ -49,7 +50,7 @@ export function SignUp() {
       await signIn('credentials', {
         email: values.email,
         password: values.password,
-        callbackUrl: '/bling',
+        callbackUrl: APP_USER_HOME,
         redirect: true,
       });
     } catch (error) {
@@ -60,7 +61,7 @@ export function SignUp() {
   const handleGoogleSignIn = async () => {
     try {
       setLoading(true);
-      await signIn('google', { callbackUrl: '/bling' });
+      await signIn('google', { callbackUrl: APP_USER_HOME });
     } catch (error) {
       console.error('Erro ao autenticar com o Google:', error);
       setErrorMessage('Erro ao autenticar com o Google. Tente novamente.');
