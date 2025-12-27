@@ -6,23 +6,22 @@ import classes from './PublicFooter.module.css';
 
 const data = [
   {
-    title: 'Sobre mim',
+    title: 'Contato',
     links: [
-      { label: 'Portifólio', link: 'https://foliveiradev.netlify.app/' },
+      { label: 'E-mail comercial', link: 'mailto:agencia.foliveira@gmail.com' },
+      { label: 'Agendar demonstração', link: 'https://cal.com/foliveira/nextjs-template' },
+      { label: 'Formulário de contato', link: 'https://foliveiradev.netlify.app/' },
+    ],
+  },
+  {
+    title: 'Sobre',
+    links: [
+      { label: 'Portfólio', link: 'https://foliveiradev.netlify.app/' },
       {
         label: 'LinkedIn',
         link: 'https://www.linkedin.com/in/felipe-de-oliveira-souza-a558a814b/',
       },
-      { label: 'Github', link: 'https://github.com/FelipeOliveiraDvP' },
-    ],
-  },
-  {
-    title: 'Mais informações',
-    links: [
-      { label: 'Serviços', link: 'https://foliveiradev.netlify.app/#servicos' },
-      { label: 'Processo', link: 'https://foliveiradev.netlify.app/#processo' },
-      { label: 'Projetos', link: 'https://foliveiradev.netlify.app/#projetos' },
-      { label: 'Pacotes', link: 'https://foliveiradev.netlify.app/#pacotes' },
+      { label: 'GitHub', link: 'https://github.com/FelipeOliveiraDvP' },
     ],
   },
 ];
@@ -35,7 +34,8 @@ export function PublicFooter() {
         className={classes.link}
         component="a"
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {link.label}
       </Text>
@@ -70,7 +70,8 @@ export function PublicFooter() {
           >
             foliveira.dev.br
           </Anchor>{' '}
-          Todos os direitos reservados.
+          • Precisa de ajuda? Escreva para{' '}
+          <Anchor href="mailto:agencia.foliveira@gmail.com">agencia.foliveira@gmail.com</Anchor>.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

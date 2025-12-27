@@ -127,13 +127,26 @@ export function Home() {
 
             <Group gap="md">
               <Button
+                component="a"
+                href="mailto:agencia.foliveira@gmail.com?subject=Projeto%20SaaS%20com%20Next.js"
                 size="xl"
                 variant="outline"
                 color="white"
                 leftSection={<Rocket size={20} />}
                 style={{ borderWidth: 2 }}
               >
-                Começar agora
+                Agende uma conversa
+              </Button>
+              <Button
+                component="a"
+                href="https://github.com/FelipeOliveiraDvP/menu-agora-web"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="xl"
+                color="violet"
+                variant="filled"
+              >
+                Ver código-fonte
               </Button>
             </Group>
 
@@ -380,19 +393,21 @@ export function Home() {
             </Title>
 
             <Text size="lg" maw={rem(600)} opacity={0.9}>
-              Juntos vamos transformar sua ideia em realidade com o template perfeito para
-              desenvolvimento rápido e eficiente.
+              Entre em contato para adaptar o template à sua operação, publicar em produção e
+              planejar os próximos módulos estratégicos para o seu negócio.
             </Text>
 
             <Group gap="md">
               <Button
+                component="a"
+                href="mailto:agencia.foliveira@gmail.com?subject=Implanta%C3%A7%C3%A3o%20Template%20Next.js"
                 size="xl"
                 variant="outline"
                 color="white"
                 style={{ borderWidth: 2 }}
                 leftSection={<Rocket size={20} />}
               >
-                Solicitar Orçamento
+                Entre em contato
               </Button>
             </Group>
           </Stack>
