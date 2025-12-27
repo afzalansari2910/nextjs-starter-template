@@ -64,26 +64,32 @@ export function Home() {
 
   const upcomingFeatures = [
     {
+      icon: Bot,
+      title: 'Desenvolvimento com IA',
+      description: 'Pronto para desenvolvimento acelerado utilizando agentes de IA',
+      status: 'Pronto',
+    },
+    {
       icon: TestTube,
       title: 'Testes E2E',
-      description: 'Suite completa de testes end-to-end com Cypress',
-      status: 'Em desenvolvimento',
+      description: 'Suite completa de testes end-to-end com Playwright',
+      status: 'Em breve',
     },
     {
       icon: CreditCard,
       title: 'Sistema de Pagamento',
-      description: 'Integração com principais gateways de pagamento',
-      status: 'Próxima release',
+      description: 'Integração pronta com Stripe para gerenciar assinaturas e pagamentos',
+      status: 'Em breve',
     },
     {
-      icon: Bot,
-      title: 'Assistente de IA',
-      description: 'Assistente inteligente integrado à sua aplicação',
-      status: 'Planejado',
+      icon: BarChart3,
+      title: 'Observabilidade Avançada',
+      description: 'Preparado para integração com ferramentas como Sentry e OpenTelemetry',
+      status: 'Em breve',
     },
   ];
 
-  const techStack = ['Next.js 15+', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Mantine UI'];
+  const techStack = ['Next.js 16+', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Mantine UI'];
 
   return (
     <Box style={{ minHeight: '100vh' }}>
@@ -115,7 +121,7 @@ export function Home() {
             </Title>
 
             <Text size="xl" maw={rem(600)} opacity={0.9}>
-              Template completo com NextJS + Prisma incluindo autenticação, pagamentos, e-mails e
+              Template completo com NextJS 16 e Prisma incluindo autenticação, pagamentos, e-mails e
               muito mais. Comece seu projeto em minutos, não em semanas.
             </Text>
 
@@ -136,7 +142,7 @@ export function Home() {
                 <Check size={14} />
               </ThemeIcon>
               <Text size="sm" opacity={0.9}>
-                Sem taxas mensais
+                Sem cobrança
               </Text>
               <Text size="sm" opacity={0.5}>
                 •
@@ -257,7 +263,7 @@ export function Home() {
           </Text>
         </Stack>
 
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="lg">
+        <SimpleGrid cols={{ base: 1, md: 2, lg: 4 }} spacing="lg">
           {upcomingFeatures.map((feature, index) => (
             <Card
               key={index}
@@ -348,80 +354,6 @@ export function Home() {
                 </List>
               </Stack>
             </Grid.Col>
-
-            {/* <Grid.Col span={{ base: 12, md: 6 }}>
-              <Paper shadow="xl" p="xl" radius="md" style={{ backgroundColor: 'white' }}>
-                <Stack gap="xl">
-                  <div>
-                    <Text size="sm" c="dimmed" fw={600} tt="uppercase">
-                      Investimento Único
-                    </Text>
-                    <Group gap="xs" mt="xs">
-                      <Text size={rem(48)} fw={900} c="violet">
-                        R$ 497
-                      </Text>
-                      <Stack gap={0}>
-                        <Text size="lg" c="dimmed" td="line-through">
-                          R$ 997
-                        </Text>
-                        <Badge color="red" variant="filled" size="sm">
-                          50% OFF
-                        </Badge>
-                      </Stack>
-                    </Group>
-                  </div>
-
-                  <Divider />
-
-                  <Stack gap="sm">
-                    <Group gap="xs">
-                      <Check size={20} color="green" />
-                      <Text size="sm" c="violet">
-                        Acesso vitalício ao código
-                      </Text>
-                    </Group>
-                    <Group gap="xs">
-                      <Check size={20} color="green" />
-                      <Text size="sm" c="violet">
-                        Todas as funcionalidades incluídas
-                      </Text>
-                    </Group>
-                    <Group gap="xs">
-                      <Check size={20} color="green" />
-                      <Text size="sm" c="violet">
-                        Atualizações gratuitas
-                      </Text>
-                    </Group>
-                    <Group gap="xs">
-                      <Check size={20} color="green" />
-                      <Text size="sm" c="violet">
-                        Documentação completa
-                      </Text>
-                    </Group>
-                    <Group gap="xs">
-                      <Check size={20} color="green" />
-                      <Text size="sm" c="violet">
-                        Suporte por 90 dias
-                      </Text>
-                    </Group>
-                  </Stack>
-
-                  <Button
-                    size="lg"
-                    fullWidth
-                    color="violet"
-                    leftSection={<Rocket size={20} />}
-                    onClick={() => setSelectedPlan('premium')}
-                  >
-                    Começar Agora
-                  </Button>
-
-                  <Text size="xs" ta="center" c="dimmed">
-                    🔒 Pagamento seguro • Garantia de 30 dias
-                  </Text>
-                </Stack>
-              </Paper>
-            </Grid.Col> */}
           </Grid>
         </Container>
       </Box>

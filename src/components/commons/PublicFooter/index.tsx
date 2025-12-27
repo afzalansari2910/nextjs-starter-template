@@ -6,9 +6,9 @@ import classes from './PublicFooter.module.css';
 
 const data = [
   {
-    title: 'Sobre',
+    title: 'Sobre mim',
     links: [
-      { label: 'Portifólio', link: 'https://foliveira.dev.br/' },
+      { label: 'Portifólio', link: 'https://foliveiradev.netlify.app/' },
       {
         label: 'LinkedIn',
         link: 'https://www.linkedin.com/in/felipe-de-oliveira-souza-a558a814b/',
@@ -17,12 +17,12 @@ const data = [
     ],
   },
   {
-    title: 'Serviços',
+    title: 'Mais informações',
     links: [
-      { label: 'Desenvolvimento Web', link: 'https://foliveira.dev.br/#servicos' },
-      { label: 'Automações', link: 'https://foliveira.dev.br/n8n.html' },
-      { label: 'Projetos', link: 'https://foliveira.dev.br/projetos.html' },
-      { label: 'Pacotes', link: 'https://foliveira.dev.br/pacotes.html' },
+      { label: 'Serviços', link: 'https://foliveiradev.netlify.app/#servicos' },
+      { label: 'Processo', link: 'https://foliveiradev.netlify.app/#processo' },
+      { label: 'Projetos', link: 'https://foliveiradev.netlify.app/#projetos' },
+      { label: 'Pacotes', link: 'https://foliveiradev.netlify.app/#pacotes' },
     ],
   },
 ];
@@ -53,7 +53,7 @@ export function PublicFooter() {
     <div className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Logo />
+          <Logo size={80} />
           <Text size="xs" c="dimmed" className={classes.description}>
             {APP_DESCRIPTION}
           </Text>
@@ -63,7 +63,11 @@ export function PublicFooter() {
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
           © {new Date().getFullYear()}{' '}
-          <Anchor href="https://foliveira.dev.br/" target="_blank" referrerPolicy="no-referrer">
+          <Anchor
+            href="https://foliveiradev.netlify.app/"
+            target="_blank"
+            referrerPolicy="no-referrer"
+          >
             foliveira.dev.br
           </Anchor>{' '}
           Todos os direitos reservados.

@@ -1,6 +1,7 @@
 import { Burger, Button, Divider, Drawer, Group, ScrollArea } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
+import { PUBLIC_ROUTES } from '@/lib/routes';
 import { Logo } from '../Logo';
 import classes from './PublicHeader.module.css';
 
@@ -10,16 +11,20 @@ export function PublicHeader() {
   return (
     <>
       <Group justify="space-between" align="center" h="100%">
-        <Logo />
+        <Logo size={40} />
 
         <Group h="100%" gap={0} visibleFrom="sm">
-          <Link href="/" className={classes.link}>
+          {Object.entries(PUBLIC_ROUTES).map(([key, route]) => (
+            <Link key={key} href={route.path} className={classes.link}>
+              {route.label}
+            </Link>
+          ))}
+          {/* <Link href="/" className={classes.link}>
             Home
           </Link>
-
           <Link href="/privacy" className={classes.link}>
             Política de Privacidade
-          </Link>
+          </Link> */}
         </Group>
 
         <Group visibleFrom="sm">
